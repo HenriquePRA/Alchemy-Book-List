@@ -1,0 +1,225 @@
+// povoamento dos usuarios
+
+db.usuario.insertMany([
+	{
+		_id: 1,
+		login: "sombra12",
+		senha: "abc123456",
+		nickname: "henriqueRev"
+	},{
+		_id: 2,
+		login: "noiReader",
+		senha: "a1b2c3d4",
+		nickname: "toxolias",
+		nome: "Henrique Poggi"
+	},{
+		_id: 3,
+		login: "teemoadc",
+		senha: "senha123",
+		nickname: "teemo_m7",
+		nome: "Carlos Nunes"
+	},{
+		_id: 4,
+		login: "AdriBrabo",
+		senha: "programojava99",
+		nickname: "java_facil",
+		nome: "Adrianderson"
+	},{
+		_id: 5,
+		login: "Clovis100",
+		senha: "adamastor255",
+		nickname: "cadamas",
+		nome: "Clovis Adamastor"
+	},{
+		_id: 6,
+		login: "jhonpoll",
+		senha: "diaatual16",
+		nickname: "dianum16",
+		nome: "Jhon Poll"
+	},{
+		_id: 7,
+		login: "nomekop",
+		senha: "nomekopCania11",
+		nickname: "NoRev",
+		nome: "Nomekop de Cania"
+	},{
+		_id: 8,
+		login: "TSacre",
+		senha: "atackonred",
+		nickname: "ThomasPaladino",
+		nome: "Thomas Sacre"
+	},{
+		_id: 9,
+		login: "EmmaS",
+		senha: "killBlue",
+		nickname: "EmmaDiablo",
+		nome: "Emma Sacre"
+	},{
+		_id: 10,
+		login: "doopelBerseker",
+		senha: "nosurrender999",
+		nickname: "DoopelTempo",
+		nome: "Lethalline B. Fuuka"
+	}
+]),
+
+// povoamento dos livros
+
+db.livro.insertMany([
+	{
+		_id: "978-8535909555",
+		Nome: "A revolução dos bichos",
+		Autores: [
+			"George Orwell"
+		],
+		Generos: [
+			"Alegoria",
+			"Sátira",
+			"Roman à clef",
+			"Sátira política",
+			"Ficção distópica"
+		],
+		Sinopse: "A Revolução dos Bichos, de George Orwell, se passa numa granja liderada, inicialmente, pelo Sr. Jones. Porém, insatisfeitos com a dominação e exploração e liderados pelo Porco Major, os animais decidem fazer uma revolução. Assim, o inimigo seria aquele que anda sobre duas pernas.",
+		Avaliaçoes: [
+			{
+				usuario: 1,
+				nota: 4.5
+			},
+			{
+				usuario: 2,
+				nota: 5.0,
+				texto: "esse livro é de uma excelente leitura, recomendo a todos."
+			},
+					{
+				usuario: 3,
+				nota: 4.9,
+				texto: "muito bom !"
+			}
+		],
+		Ano: 2007,
+		Edição: 1,
+	},{
+		_id: "978-8525052247",
+		Nome: "Fahrenheit 451",
+		Autores: [
+			"Ray Bradbury"
+		],
+		Generos: [
+			"Ficção utópica",
+			"Ficção distópica"
+		],
+		Sinopse: "O romance conta sobre uma realidade distópica em que o trabalho dos bombeiros é basicamente queimar livros, isso porque foi instaurada uma cultura de combate ao pensamento crítico e autônomo dos indivíduos.",
+		Avaliaçoes: [
+			{
+				usuario: 6,
+				nota: 3.5
+			},
+			{
+				usuario: 4,
+				nota: 4.9,
+				texto: "Excelente livro."
+			}
+		],
+		Ano: 1953,
+		Edição: 1
+	},{
+		_id: "978-8581631998",
+		Nome: "Sangue na neve",
+		Autores: [
+			"Lisa Gardner"
+		],
+		Generos: [
+			"Romance",
+			"Suspense",
+			"Mistério",
+			"Ficção policial"
+		],
+		Sinopse: "Uma mulher é capaz de tudo para defender aquilo que ama. A policial Tessa Leoni matou seu marido, Brian Darby, em legítima defesa. A arma do crime está à vista de todos e os hematomas no corpo de Tessa confirmam a ocorrência. A policial também não fez questão de fugir, ou de arrumar qualquer justificativa para explicar aquele corpo estendido no chão da cozinha, portanto, aparentemente, o que a investigadora D.D.Warren tem à sua frente é o desfecho de uma briga doméstica.",
+		Avaliaçoes: [
+			{
+				usuario: 5,
+				nota: 4
+			}
+		],
+		Ano: 2013,
+		Edição: 1
+	},{
+		_id: "978-8521622109",
+		Nome: "Arquitetura de sistemas operacionais",
+		Autores: [
+			"Francis Berenger Machado",
+			"Luiz Paulo Maia"
+		],
+		Generos: [
+			"Técnico",
+			"Científico"
+		],
+		Sinopse: "Arquitetura de Sistemas Operacionais aborda a arquitetura e funcionamento dos sistemas operacionais multiprogramáveis, de forma atual, abrangente e didática. Seu conteúdo é direcionado a estudantes e a profissionais de informática de todas as áreas. Como pré-requisito básico para sua leitura, é necessário apenas algum conhecimento de organização de computadores e estrutura de dados.",
+		Avaliaçoes: [
+			{
+				usuario: 1,
+				nota: 5
+			},{
+				usuario: 2,
+				nota: 5
+			},{
+				usuario: 3,
+				nota: 5,
+				texto: "um dos melhores livros de informática"
+			},{
+				usuario: 4,
+				nota: 5
+			},
+		],
+		Ano: 2013,
+		Edição: 5
+	},{
+		_id: "978-8521629399",
+		Nome: "Fundamentos de Sistemas Operacionais",
+		Autores: [
+			"Greg Gagne",
+			"Peter Baer Galvin",
+			"Abraham Silberschatz"
+		],
+		Generos: [
+			"Técnico",
+			"Científico"
+		],
+		Sinopse: "Neste livro, é possível ter uma abordagem aprofundada de assuntos como os sistemas móveis e a computação em nuvem.O sucesso da obra acontece já em sua concepção, quando os autores entendem que os sistemas operacionais são parte essencial de qualquer sistema de computação. Assim, o conteúdo foi pensado para oferecer uma ampla base teórica a estudantes e profissionais da área.",
+		Avaliaçoes: [
+			{
+				usuario: 10,
+				nota: 2.0
+			},{
+				usuario: 9,
+				nota: 5,
+				texto: "Graças a esse livro passei na disciplina de sistemas operacionais."
+				
+			},{
+				usuario: 7,
+				nota: 4.9,
+				texto: "o mais completo livro sobre sistemas operacionais."
+			},{
+				usuario: 8,
+				nota: 4.9,
+				texto: "A capa não faz jus ao livro hahaha."
+			},
+		],
+		Ano: 2015,
+		Edição: 9
+	},{
+		_id: "978-8594318602",
+		Nome: "Dom Casmurro",
+		Autores: [
+			"Machado de Assis"
+		],
+		Generos: [
+			"Realismo Literário"
+		],
+		Sinopse: "Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira",
+		Avaliaçoes: [],
+		Ano: 2019,
+		Edição: 3
+	}
+])
+

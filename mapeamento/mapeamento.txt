@@ -1,0 +1,44 @@
+// usuario
+
+{
+	"idusuario": 1,
+	"login": "usuarioteste",
+	"senha": "11111111",
+	"nickname": "test1"
+},
+
+{
+	"idusuario": 2,
+	"login": "usuarioteste2",
+	"senha": "22222222",
+	"nickname": "test2",
+	"nome": "Usuario de Teste 2"
+}
+
+// coleção livro
+
+{
+	"ISBN": "999-99999999",
+	"Nome": "exemplo mapeamento",
+	"Autores": [
+        "autor_mapeamento"
+	],	
+	"Generos": [
+		"cientifico",
+		"educacional"
+	],
+	"Sinopse": "Este campo de texto contem um breve resumo do que se trata o livro",
+	"Avaliaçoes": [
+		{
+			"usuario": 1, //referencia a idusuario (FK)
+            "nota": 4.5,
+            "texto_avaliativo": "eu avaliei este livro com texto"
+        },
+		{
+			"usuario": 2,
+            "nota": 5.0,
+        },
+	],
+	"Ano": 2020,
+	"Edição": 1
+}
