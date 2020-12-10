@@ -1,0 +1,66 @@
+{
+	"ISBN": "978-0-7334-2609-4",
+	"Nome": "livro teste",
+	"Autores": {
+        "autor1":"",
+		"autor2":""
+    },
+	
+	"Generos": [
+		"cientifico",
+		"educacional"
+	],
+	"Préfacio": "Este é um livro que ensina ciencia de forma pratica.",
+	"Avaliaçoes": [
+		{
+			"usuario": 1, //referencia a idusuario (FK)
+            "nota": 4.5,
+            "review":1
+        },
+		{
+			"usuario": 2,
+            "nota": 5.0,
+            "review":2
+        },
+        {
+            "usuario": 3,
+            "nota": 10.0,
+            "review":3  
+		}
+	],
+	"Ano": 2020,
+	"Edição": 1
+
+}
+
+// usuario
+
+{
+	"idusuario": 1,
+	"login": "sombra12",
+	"senha": "abc123456",
+	"nickname": "henriqueRev"
+},
+
+{
+	"idusuario": 2,
+	"login": "noiReader",
+	"senha": "a1b2c3d4",
+	"nickname": "toxolias",
+	"nome": "Henrique Poggi"
+}
+
+
+// review
+{
+    "id_avaliação":1,
+    "texto": " O livro é muito bom"
+},
+{
+    "id_avaliação":2,
+    "texto": " O livro tem um enredo legal mas não é essas coisas todas"
+},
+{
+    "id_avaliação":3,
+    "texto": " O livro chegou cheio de erros."
+},
