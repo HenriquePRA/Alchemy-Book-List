@@ -1,0 +1,11 @@
+// index para buscas por ano
+
+db.livro.createIndex({Ano: 1})
+
+// index para buscas por versões mais recentes dos livros
+// uma vez que um mesmo livro pode ter multiplas edições
+
+db.livro.createIndex(
+    {Nome: 1, Ano: -1, Edição: -1},
+    {name: "recente"}    
+)
