@@ -63,3 +63,73 @@ db.livro.find({"Generos.0": "Técnico"})
 //busca por livros avaliados pelo usuário de id 3
 db.livro.find({"Avaliaçoes.usuario": 3})
 
+// 02 consultas diferentes com aggregate
+
+// listagem de todos os livros com média das avaliações de todos os livros exibindo apenas
+// o nome do livro o isbn e a média
+db.livro.aggregate([
+    {$unwind: "$Avaliaçoes"},
+    {$group: {
+        _id: "$_id",
+        Nome: {$first: "$Nome"},
+        Nota_Média: {$avg: "$Avaliaçoes.nota"}    
+    }},
+    {$project: {
+        _id: 0, 
+        "ISBN": "$_id", 
+        Nome: "$Nome", 
+        Nota_Média: "$Nota_Média"}}
+])
+
+// listagem da nota média de todos os livros que contenham o genero Ficção distópica
+db.livro.aggregate([
+    {$unwind: "$Avaliaçoes"},
+    {$match: {Generos: {$in: ["Ficção distópica"]}}},
+    {$group: {_id: null, nota: {$avg: "$Avaliaçoes.nota"}}},
+    {$project: {_id: 0, Genero: "Ficção distópica", "Nota Média": "$nota"}}
+])
+
+// 01 consulta com lookup 
+
+// exibição das avaliações feitas pelos usuários com o nome e ISBN do livro, a nota da avaliação
+// e o nickname do usuário que fez a avaliação
+
+db.livro.aggregate([
+    {$unwind: "$Avaliaçoes"},
+    {$lookup: {
+        from: "usuario",
+        localField: "Avaliaçoes.usuario",
+        foreignField: "_id",
+        as: "usuario"
+    }},
+    {$unwind: "$usuario"},
+    {$project: {
+        _id: 0,
+        "ISBN": "$_id",
+        "Livro": "$Nome",
+        "nickname": "$usuario.nickname",
+        "nota": "$Avaliaçoes.nota"
+    }}
+])
+
+// 01 consulta ao seu critério, dentro do contexto da aplicação
+
+// Listagem de avaliações de um usuário
+db.livro.aggregate([
+    {$unwind: "$Avaliaçoes"},
+    {$lookup: {
+        from: "usuario",
+        localField: "Avaliaçoes.usuario",
+        foreignField: "_id",
+        as: "usuario"
+    }},
+    {$unwind: "$usuario"},
+    {$match: {"usuario._id": 11}},
+    {$project: {
+        _id: 0, 
+        "ISBN":"$_id",
+        "livro": "$Nome",
+        "id do usuario": "$usuario._id",
+        "nota": "$Avaliaçoes.nota"
+     }}    
+])
