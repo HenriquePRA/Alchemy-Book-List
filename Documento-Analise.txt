@@ -1,0 +1,13 @@
+Neste documento consta a análise abordando os pontos positivos e negativos em utilizar o MongoDB,
+visto que seu uso vem crescendo por várias empresas de grande porte, dessa forma vamos a análise.
+
+É vantajoso utilizar o MongoDB, devido ele apresentar uma alta performance, mais agilidade, escalabilidade, flexibilidadee, melhor desempenho,
+consultas mais simples, apresenta a função GridFS que possibilita o armazenamento de grandes dados, como: vídeos, animações e como ele é orientado
+a documento apresenta uma maior flexibilidade em mudança de estrutura.
+
+Sendo assim, ele apresenta pontos negativos quando se trata de manuseio relacionados a muitas entidades de grande importância para o sistema, sendo
+mais adequado o uso de algum banco relacional, também não é recomendado o seu uso quando se trata de consultas com muitas junções, uniões e chave estrangeiras,
+o tempo de adaptação também é um ponto muito abordado pelos usuários e a sua facilidade de mudança da sua estrutura.
+
+O ponto de mudança de estrutura foi abordado como ponto positivo e negativo, porém esse ponto depende principalmente dos requisitos do projeto e de sua finalidade
+dependendo disso, o ponto de mudança de estrutura pode ser positivo ou negativo. Assim  como toda tecnologia o MongoDB não fica de fora, é necessário avaliar o escopo do projeto, seus requisitos, finalidades, objetivos e debater com a equipe para que assim seja decidida as tecnologias em que serão utilizadas.
