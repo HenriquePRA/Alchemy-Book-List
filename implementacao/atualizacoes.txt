@@ -1,0 +1,15 @@
+// inserindo generos de um livro
+
+db.livro.update(
+	{_id: "978-8594318602"},
+	{$push: { Generos: {$each: [
+		 	"Romance", "Memórias", "Ficção"
+	]}}}
+)
+
+// alterando um texto avaliativo
+
+db.texto_avaliativo.update(
+	{_id: 2},
+	{$set: {texto: "muito bom, entrou para minha lista de livros preferidos."}}
+)

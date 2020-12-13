@@ -1,0 +1,3 @@
+// remoção do texto de uma avaliação
+
+db.texto_avaliativo.deleteOne({_id: 1})

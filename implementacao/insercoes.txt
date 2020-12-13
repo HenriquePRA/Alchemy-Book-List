@@ -1,69 +1,69 @@
-// povoamento dos usuarios
+// inserção de usuarios
 
 db.usuario.insertMany([
 	{
-		_id: 1,
+		_id: 2,
 		login: "sombra12",
 		senha: "abc123456",
 		nickname: "henriqueRev"
 	},{
-		_id: 2,
+		_id: 3,
 		login: "noiReader",
 		senha: "a1b2c3d4",
 		nickname: "toxolias",
 		nome: "Henrique Poggi"
 	},{
-		_id: 3,
-		login: "teemoadc",
+		_id: 4,
+		login: "teemoMid",
 		senha: "senha123",
 		nickname: "teemo_m7",
 		nome: "Carlos Nunes"
 	},{
-		_id: 4,
+		_id: 5,
 		login: "AdriBrabo",
 		senha: "programojava99",
 		nickname: "java_facil",
 		nome: "Adrianderson"
 	},{
-		_id: 5,
+		_id: 6,
 		login: "Clovis100",
 		senha: "adamastor255",
 		nickname: "cadamas",
 		nome: "Clovis Adamastor"
 	},{
-		_id: 6,
+		_id: 7,
 		login: "jhonpoll",
 		senha: "diaatual16",
 		nickname: "dianum16",
 		nome: "Jhon Poll"
 	},{
-		_id: 7,
+		_id: 8,
 		login: "nomekop",
 		senha: "nomekopCania11",
 		nickname: "NoRev",
 		nome: "Nomekop de Cania"
 	},{
-		_id: 8,
+		_id: 9,
 		login: "TSacre",
 		senha: "atackonred",
 		nickname: "ThomasPaladino",
 		nome: "Thomas Sacre"
 	},{
-		_id: 9,
+		_id: 10,
 		login: "EmmaS",
 		senha: "killBlue",
 		nickname: "EmmaDiablo",
 		nome: "Emma Sacre"
 	},{
-		_id: 10,
+		_id: 11,
 		login: "doopelBerseker",
 		senha: "nosurrender999",
 		nickname: "DoopelTempo",
 		nome: "Lethalline B. Fuuka"
 	}
-]),
+])
 
-// povoamento dos livros
+// inserção de livros
 
 db.livro.insertMany([
 	{
@@ -82,18 +82,18 @@ db.livro.insertMany([
 		Sinopse: "A Revolução dos Bichos, de George Orwell, se passa numa granja liderada, inicialmente, pelo Sr. Jones. Porém, insatisfeitos com a dominação e exploração e liderados pelo Porco Major, os animais decidem fazer uma revolução. Assim, o inimigo seria aquele que anda sobre duas pernas.",
 		Avaliaçoes: [
 			{
-				usuario: 1,
+				usuario: 11,
 				nota: 4.5
 			},
 			{
 				usuario: 2,
 				nota: 5.0,
-				texto: "esse livro é de uma excelente leitura, recomendo a todos."
+				texto_avaliativo: 1
 			},
 					{
 				usuario: 3,
 				nota: 4.9,
-				texto: "muito bom !"
+				texto_avaliativo: 2
 			}
 		],
 		Ano: 2007,
@@ -117,7 +117,7 @@ db.livro.insertMany([
 			{
 				usuario: 4,
 				nota: 4.9,
-				texto: "Excelente livro."
+				texto_avaliativo: 3
 			}
 		],
 		Ano: 1953,
@@ -157,7 +157,7 @@ db.livro.insertMany([
 		Sinopse: "Arquitetura de Sistemas Operacionais aborda a arquitetura e funcionamento dos sistemas operacionais multiprogramáveis, de forma atual, abrangente e didática. Seu conteúdo é direcionado a estudantes e a profissionais de informática de todas as áreas. Como pré-requisito básico para sua leitura, é necessário apenas algum conhecimento de organização de computadores e estrutura de dados.",
 		Avaliaçoes: [
 			{
-				usuario: 1,
+				usuario: 11,
 				nota: 5
 			},{
 				usuario: 2,
@@ -165,7 +165,7 @@ db.livro.insertMany([
 			},{
 				usuario: 3,
 				nota: 5,
-				texto: "um dos melhores livros de informática"
+				texto_avaliativo: 4
 			},{
 				usuario: 4,
 				nota: 5
@@ -193,16 +193,16 @@ db.livro.insertMany([
 			},{
 				usuario: 9,
 				nota: 5,
-				texto: "Graças a esse livro passei na disciplina de sistemas operacionais."
+				texto_avaliativo: 5
 				
 			},{
 				usuario: 7,
 				nota: 4.9,
-				texto: "o mais completo livro sobre sistemas operacionais."
+				texto_avaliativo: 6
 			},{
 				usuario: 8,
 				nota: 4.9,
-				texto: "A capa não faz jus ao livro hahaha."
+				texto_avaliativo: "A capa não faz jus ao livro hahaha."
 			},
 		],
 		Ano: 2015,
@@ -223,3 +223,43 @@ db.livro.insertMany([
 	}
 ])
 
+// inserção dos textos avaliativos
+
+db.texto_avaliativo.insertMany([
+	{
+		_id: 1,
+		livro: "978-8535909555",
+		usuario: 2,
+		texto: "esse livro é de uma excelente leitura, recomendo a todos."
+	},{
+		_id: 2,
+		livro: "978-8535909555",
+		usuario: 3,
+		texto: "muito bom !"
+	},{
+		_id: 3,
+		livro: "978-8525052247",
+		usuario: 4,
+		texto: "Excelente livro."
+	},{
+		_id: 4,
+		livro: "978-8521622109",
+		usuario: 3,
+		texto: "um dos melhores livros de informática"
+	},{
+		_id: 5,
+		livro: "978-8521629399",
+		usuario: 9,
+		texto: "Graças a esse livro passei na disciplina de sistemas operacionais."
+	},{
+		_id: 6,
+		livro: "978-8521629399",
+		usuario: 7,
+		texto: "o mais completo livro sobre sistemas operacionais."
+	},{
+		_id: 7,
+		livro: "978-8521629399",
+		usuario: 8,
+		texto: "A capa não faz jus ao livro hahaha."
+	}
+])
