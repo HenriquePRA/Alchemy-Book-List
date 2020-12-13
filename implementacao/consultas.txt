@@ -1,0 +1,65 @@
+// 01 consulta para coleção inteira
+
+
+db.livro.find({})
+
+// 01 contagem de documentos na coleção
+
+
+db.livro.aggregate([
+   {$group: { _id: null, quatidade_livros: {$sum: 1} }},
+   {$project: {_id: 0}}
+])
+
+
+// 03 consultas com filtros diversos
+
+
+db.livro.find({Ano: {$eq: 2019}}) // busca por livros do ano 2019
+
+db.livro.find({Edição: {$gt: 1}}) // busca por livros que não estão em sua primeira edição
+
+db.livro.find({Generos: {$in: ["Técnico"]}}) // busca por livros que possuam o genero técnico
+
+
+// 03 consultas com filtros diversos e projeção
+
+// busca por livros do ano 1950 até 2000 projetando sem id e avaliações
+db.livro.aggregate([    
+    {$match: {Ano: {$lt: 2000, $gt: 1950}}},
+    {$project: {_id: 0, Avaliaçoes: 0}}
+])
+
+// busca pelos identificadores(ISBN) e nomes de livros e contendo o genero romance recentes
+db.livro.aggregate([
+    {$match: {Ano: {$gt: 2010}, Generos: {$in: ["Romance"]}}},
+    {$project: {_id: 0, "ISBN": "$_id", "Nome do livro": "$Nome"}}
+])
+
+// busca por usuários que não possuem nomes cadastrado
+
+db.usuario.aggregate([
+    {$match: {nome: null}},
+    {$project: {_id:0, nickname: 1}}
+])
+
+// 01 colsulta com expressão regular
+
+//busca por livros posteriores ao ano 2000, que contenham a palavra revolução em sua sinopse
+//exibindo apenas o nome e a sinopse
+
+db.livro.aggregate([
+    {$match: {Ano: {$gt: 2000}, Sinopse: {$regex: /revo/}}},
+    {$project: {_id: 0, Nome: 1, Sinopse: 1}}
+])
+
+//01 consulta com acesso a array de elementos
+
+//busca por livros que tenham em sua primeira categoria o genero Técnico
+db.livro.find({"Generos.0": "Técnico"})
+
+//01 consulta com acesso a estrutura embutida
+
+//busca por livros avaliados pelo usuário de id 3
+db.livro.find({"Avaliaçoes.usuario": 3})
+
