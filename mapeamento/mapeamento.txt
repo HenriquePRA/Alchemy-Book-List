@@ -22,11 +22,16 @@ db.livro.insert({
 	"Sinopse": "Este campo de texto contem um breve resumo do que se trata o livro",
 	"Avaliaçoes": [
 		{
-			"usuario": 1,
-            "nota": 5,
-            "texto_avaliativo": "eu avaliei este livro com texto"
+			"_id":1
         }
 	],
 	"Ano": 2020,
 	"Edição": 1
+})
+
+db.texto_avaliativo({
+	"_id":1,
+	"livro":"Titulo do Livro",
+	"usuario":1,
+	"texto": "Texto avaliando o livro"
 })
